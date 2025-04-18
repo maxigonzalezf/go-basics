@@ -1,18 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/maxigonzalezf/go-tomaslingotti/video_0/exported"
+)
 
 // why go?
 // https://yourbasic.org/golang/advantages-over-java-python/
 
+// unexported & exported
+// unexported se pueden llamar desde distintos archivos dentro de un mismo paquete
+// exported se pueden llamar desde archivos de otros paquetes
+
 // Constants
 const myConst int = 7
-const myOtherConst = "String constante"
+const myOtherConst = 8
 const (
-	agrupatedConst  = 3
+	agrupatedConst  = "Holis"
 	agrupatedConst2 = 2
 )
 
+// entry point
 func main() {
 	// this is a one line comment
 	/*
@@ -20,9 +29,15 @@ func main() {
 		a multiline comment
 	*/
 	dataTypesZeroValues()
+	println("")
 	dataTypesWithValues()
+	println("")
 	dataTypesGroup()
-	printConstants()
+	println("")
+	printInt(myConst) // utilizo funcion de otro archivo dentro del mismo package
+	exported.PrintConstant(agrupatedConst) // funcion importada del package exported
+	println("")
+	exported.PrintConstants(myConst, myOtherConst, agrupatedConst, agrupatedConst2)
 }
 
 func dataTypesZeroValues() {
@@ -53,9 +68,4 @@ func dataTypesGroup() {
 		b    = true
 	)
 	fmt.Printf("%v, %v, %v", q, name, b)
-}
-
-func printConstants() {
-	fmt.Printf("%v, %v, %v, %v", myConst, myOtherConst,
-				agrupatedConst, agrupatedConst2)
 }
