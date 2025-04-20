@@ -107,5 +107,6 @@ func otherArrayTypes() {
 	fmt.Printf("Slice: %v", sl)
 	// la funcion append agrega el 6 y devuelve el nuevo slice con el valor agregado
 	sl = append(sl, 6)
+	fmt.Println()
 	fmt.Printf("Slice: %v", sl)
 }
