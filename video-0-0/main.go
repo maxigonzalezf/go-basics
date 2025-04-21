@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/maxigonzalezf/go-tomaslingotti/video_0/exported"
+	"github.com/maxigonzalezf/go-tomaslingotti/video-0-0/exported"
 )
 
 // why go?
@@ -73,6 +73,7 @@ func dataTypesGroup() {
 	fmt.Printf("%v, %v, %v", q, name, b)
 }
 
+// Shorthand assignation (:=)
 func otherTypeOfAssignation() {
 	myNumber := 8
 	fmt.Println(myNumber)
@@ -109,4 +110,16 @@ func otherArrayTypes() {
 	sl = append(sl, 6)
 	fmt.Println()
 	fmt.Printf("Slice: %v", sl)
+	fmt.Println()
+
+	// crea un slice vacio (len = 0) de capacidad 5
+	sl2 := make([]int, 0, 5)
+
+	// agrega los valores al slice
+	sl2 = append(sl2, 1,2,3,4,5)
+
+	// el _ en el for, ignora el indice recibido
+	for _, value := range sl2 {
+		fmt.Println(value)
+	}
 }
