@@ -28,6 +28,7 @@ func main() {
 		This is
 		a multiline comment
 	*/
+	/*
 	dataTypesZeroValues()
 	println("")
 	dataTypesWithValues()
@@ -41,7 +42,16 @@ func main() {
 	otherTypeOfAssignation()
 	myOtherTypes()
 	otherArrayTypes()
+	*/
+	exported.PrintConstant(agrupatedConst) // funcion importada del package exported
+
+	//---------------------------------------------------
+
+	fmt.Println(seeThisConditional(2))
+	fmt.Println(seeThisConditional(1))
 }
+
+// VIDEO #1
 
 func dataTypesZeroValues() {
 	// data types
@@ -122,4 +132,20 @@ func otherArrayTypes() {
 	for _, value := range sl2 {
 		fmt.Println(value)
 	}
+}
+
+// --------------------------------------------------------------
+// VIDEO #2
+
+func seeThisConditional(i int) bool {
+	var b bool
+
+	if i % 2 == 0 {
+		b = true
+		return b
+	}
+
+	b = false
+
+	return b
 }
